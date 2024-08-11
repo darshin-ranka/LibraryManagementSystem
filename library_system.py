@@ -1,6 +1,6 @@
 # library_system.py
 
-from library import Library
+from library import Library,Book
 from sample_books import get_sample_books  # Import sample book data
 
 class LibrarySystem:
