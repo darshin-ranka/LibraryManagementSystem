@@ -25,3 +25,15 @@ def borrow_book(self, user, isbn):
                 print(f"The book '{book.title}' is currently borrowed by another user.")
         else:
             print(f"No book with ISBN {isbn} found in the library.")
+
+
+    def return_book(self, isbn):
+        if isbn in self.books:
+            book = self.books[isbn]
+            if not book.is_available:
+                book.is_available = True
+                print(f"The book '{book.title}' has been returned to the library.")
+            else:
+                print(f"The book '{book.title}' was not borrowed.")
+        else:
+            print(f"No book with ISBN {isbn} found in the library.")
