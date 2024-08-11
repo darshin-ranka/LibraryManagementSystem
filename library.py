@@ -15,3 +15,13 @@ class Library:
             print(f"Book '{book.title}' added to the library.")
 
   
+def borrow_book(self, user, isbn):
+        if isbn in self.books:
+            book = self.books[isbn]
+            if book.is_available:
+                book.is_available = False
+                print(f"{user} has borrowed '{book.title}'.")
+            else:
+                print(f"The book '{book.title}' is currently borrowed by another user.")
+        else:
+            print(f"No book with ISBN {isbn} found in the library.")
