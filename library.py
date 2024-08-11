@@ -37,3 +37,13 @@ def borrow_book(self, user, isbn):
                 print(f"The book '{book.title}' was not borrowed.")
         else:
             print(f"No book with ISBN {isbn} found in the library.")
+
+
+    def view_available_books(self):
+        print(f"Available books in {self.name} Library:")
+        available_books = [book for book in self.books.values() if book.is_available]
+        if available_books:
+            for book in available_books:
+                print(book)
+        else:
+            print("No books are currently available.")
